@@ -1,0 +1,12 @@
+<form action="" method="POST">
+    <div class="container">
+    <p>add list</p>
+    <hr>
+    <label for="title"><b>title list</b></label>
+    <input type="text" placeholder="title" name="title"  [(ngModel)]="list.title"  id="title" ><br>
+    <label for="name"><b>name list </b></label>
+    <input type="text" placeholder=" Name" name="name" [(ngModel)]="list.name"  id="name" >
+    <hr>
+    <button type="submit" class="registerbtn" (click)="saveList()">Ajouter list</button>
+    </div>
+</form>

@@ -1,0 +1,21 @@
+<h2 style="margin: auto"> list</h2><br><br><br>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>title</th>
+        <th>name</th>
+        <th class="hidden"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let list of lists;let i= index">
+        <!-- <td>{{list._id}}</td> -->
+        <td>{{list.title}}</td>
+        <td>{{list.name}}</td>
+        <td><button class="btn btn-success" (click)="delete(list._id,i)"> Delete</button>
+          <button class="btn btn-success"style="margin-left: 20px;" [routerLink]="['/update',list._id]" > Edit</button></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <button (click)="dec()">dec</button>
