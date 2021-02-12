@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class UsersService {
     
     }
 
-    signIn(email:string,password:string):void{
-        this.http.post('/api/user/signin',{email,password}).subscribe(data =>{localStorage.setItem('profile',JSON.stringify(data));this.router.navigate(['list']);});
+    signIn(email:string,password:string):Observable<any>{  
+        return this.http.post('/api/user/signin',{email,password});            
     }
-    signUp(email:string,password:string,confirmPassword:string,firstname:string,lastname:string):void{
-        this.http.post('/api/user/signup',{email,password,confirmPassword,firstname,lastname}).subscribe(data =>{localStorage.setItem('profile',JSON.stringify(data));this.router.navigate(['list']);});
+    signUp(email:string,password:string,confirmPassword:string,firstname:string,lastname:string):Observable<any>{
+        return this.http.post('/api/user/signup',{email,password,confirmPassword,firstname,lastname});
     }
     logOut():void{
         localStorage.clear();

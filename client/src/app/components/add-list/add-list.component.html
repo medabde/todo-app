@@ -1,12 +1,14 @@
-<form action="" method="POST">
-    <div class="container">
-    <p>add list</p>
-    <hr>
-    <label for="title"><b>title list</b></label>
-    <input type="text" placeholder="title" name="title"  [(ngModel)]="list.title"  id="title" ><br>
-    <label for="name"><b>name list </b></label>
-    <input type="text" placeholder=" Name" name="name" [(ngModel)]="list.name"  id="name" >
-    <hr>
-    <button type="submit" class="registerbtn" (click)="saveList()">Ajouter list</button>
+<app-navbar></app-navbar>
+<br><br>
+<form>
+    <div class="col-6">
+      <label for="exampleInputEmail1">title list</label>
+      <input type="text" class="form-control" id="title"name="title" aria-describedby="emailHelp" [(ngModel)]="list.title" placeholder="list title">
     </div>
-</form>
+    <div class="col-6">
+      <label for="exampleInputPassword1">name list</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="list.name" id="exampleInputPassword1" placeholder="list name" id="name">
+    </div>
+    <p style="color: red;"> {{error}}</p>
+    <button  style="margin-left: 13px;" type="submit" class="btn btn-primary" (click)="saveList()">Add list</button>
+  </form>

@@ -19,7 +19,8 @@ export class AppComponent {
   //list:List = new List();
  
   
-  constructor(private listsService:ListsService,private usersService:UsersService){
+  constructor(private listsService:ListsService,private usersService:UsersService, private router:Router){
+    
     // usersService.signIn("fafa@fafa.com","fafa");
     //usersService.signUp("abir@gmail.com","abir","abir","abir","abir");
     //listsService.createList(this.list); 

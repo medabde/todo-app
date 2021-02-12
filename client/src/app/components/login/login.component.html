@@ -23,12 +23,13 @@
     <label *ngIf="!isSignIn;" for="psw-repeat"><b>Repeat Password</b></label>
     <input *ngIf="!isSignIn;" type="password" placeholder="Repeat Password" [(ngModel)]="user.confirmPassword" name="confirmPassword" id="psw-repeat" required>
     <hr>
+    <p style="color: red;">{{error}}</p>
 
     <input *ngIf="isSignIn; else Registersubmit" type="submit" class="registerbtn" (click)="login()" value="Sign In"/>
     <ng-template #Registersubmit><input type="submit" class="registerbtn" (click)="register()" value="Sign Up"/></ng-template>
    
 </div>
-    
+
     <div class="container signin">
 
     <p *ngIf="!isSignIn; else Registerbutton">Already have an account? <button (click)="changeIsSignIn()">Sign In</button>.</p>

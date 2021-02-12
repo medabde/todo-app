@@ -8,6 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  error : string ='';
   isSignIn:boolean;
 
   user:any = {
@@ -27,16 +28,32 @@ export class LoginComponent implements OnInit {
   }
 
   register():void{
-    this.usersService.signUp(this.user.email,this.user.password,this.user.confirmPassword,this.user.firstname,this.user.lastname);
-    
+    //this.usersService.signUp(this.user.email,this.user.password,this.user.confirmPassword,this.user.firstname,this.user.lastname);
+    if(this.user.email==''|| this.user.password==''||this.user.confirmPassword==''||this.user.firstname==''||this.user.lastname=='')this.error = "All fields are required";
+    else{
+    this.usersService.signUp(this.user.email,this.user.password,this.user.confirmPassword,this.user.firstname,this.user.lastname).subscribe(data =>{localStorage.setItem('profile',JSON.stringify(data));this.router.navigate(['list']);},error =>{this.error=error.error.message;});
+    }
   }
 
   login():void{
-    this.usersService.signIn(this.user.email,this.user.password);
+    //this.usersService.signIn(this.user.email,this.user.password);
+    if(this.user.email==''||this.user.password=='') this.error = "All fields are required";
+    else{
+      this.usersService.signIn(this.user.email,this.user.password).subscribe(data =>{this.error='';localStorage.setItem('profile',JSON.stringify(data));this.router.navigate(['list']);},error =>{this.error=error.error.message;});
+
+    }
     
   }
 
-  changeIsSignIn():void{
+  changeIsSignIn():void{   
+    this.error ='';
+    this.user = {
+      firstname:'',
+      lastname:'',
+      email:'',
+      password:'',
+      confirmPassword:''
+    }
     this.isSignIn = !this.isSignIn;
   }
 

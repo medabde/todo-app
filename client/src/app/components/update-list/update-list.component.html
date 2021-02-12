@@ -1,12 +1,13 @@
-<form action="" method="POST">
-    <div class="container">
-    <p>update list</p>
-    <hr>
-    <label for="title"><b>title list</b></label>
-    <input type="text" placeholder="title" name="title"  [(ngModel)]="list.title"  id="title" ><br>
-    <label for="name"><b>name list </b></label>
-    <input type="text" placeholder=" Name" name="name" [(ngModel)]="list.name"  id="name" >
-    <hr>
-    <button type="submit" class="registerbtn" (click)="Update()">update list</button>
+<app-navbar></app-navbar>
+<br>
+<form>
+    <div class="col-6">
+        <label for="title"><b>title list</b></label>
+        <input type="text" placeholder="title" name="title" class="form-control" [(ngModel)]="list.title"  id="title" ><br>
+        <label for="name"><b>name list </b></label>
+        <input type="text" placeholder=" Name" name="name" class="form-control"[(ngModel)]="list.name"  id="name" >
     </div>
-</form>
+    <p style="color: red;"> {{error}}</p>
+    <button style="margin-left: 13px;" type="submit" class="btn btn-primary" (click)="Update()">Update</button>
+  </form>
+

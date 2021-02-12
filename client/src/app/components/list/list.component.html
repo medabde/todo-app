@@ -1,4 +1,8 @@
-<h2 style="margin: auto"> list</h2><br><br><br>
+<app-navbar></app-navbar>
+<br>
+<h2 style="margin: auto"> My Lists </h2><br><br>
+<button class="btn btn-primary" [routerLink]="['/Addlist']" > Create List</button>
+<br> <br> 
     <table class="table table-striped">
       <thead>
       <tr>
@@ -8,14 +12,15 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let list of lists;let i= index">
-        <!-- <td>{{list._id}}</td> -->
+      <tr *ngFor="let list of lists ; let i = index" [routerLink]="['/task', list._id]" routerLinkActive="is-active">
         <td>{{list.title}}</td>
         <td>{{list.name}}</td>
-        <td><button class="btn btn-success" (click)="delete(list._id,i)"> Delete</button>
-          <button class="btn btn-success"style="margin-left: 20px;" [routerLink]="['/update',list._id]" > Edit</button></td>
+        <td>
+          <button class="btn btn-primary"style="margin-right: 20px;" [routerLink]="['/update',list._id]" > Edit</button>
+         <button class="btn btn-danger" (click)="delete(list._id,i)"> Delete</button>
+        </td>
       </tr>
       </tbody>
     </table>
 
-    <button (click)="dec()">dec</button>
+

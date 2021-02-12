@@ -8,7 +8,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ListComponent } from './components/list/list.component';
 import { AddListComponent } from './components/add-list/add-list.component';
 import { UpdateListComponent } from './components/update-list/update-list.component';
-import { TestComponent } from './components/test/test.component';
+import { ShowListComponent } from './components/showlist/showlist.component';
+import { UpdateTodoComponent } from './components/update-todo/update-todo.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,9 @@ import { TestComponent } from './components/test/test.component';
     ListComponent,
     AddListComponent,
     UpdateListComponent,
-    TestComponent,
+    ShowListComponent,
+    UpdateTodoComponent,
+    NavbarComponent
   ],
   imports: [
     FormsModule,

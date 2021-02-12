@@ -10,6 +10,7 @@ import {ListsService} from 'src/app/services/lists.service';
   styleUrls: ['./add-list.component.css']
 })
 export class AddListComponent implements OnInit {
+  error : string = '';
   list:List={
     title: '',
     name:'',
@@ -25,8 +26,11 @@ export class AddListComponent implements OnInit {
   }
   saveList():void {
     
-    this.listservice.createList(this.list).subscribe(data => console.log(data));
+    if(this.list.title==''|| this.list.name=='') this.error = "All fields are required";
+    else{
+    this.listservice.createList(this.list).subscribe(data =>{this.error=''; console.log(data)});
     this.router.navigate(['list']);
+    }
   }
   
 }

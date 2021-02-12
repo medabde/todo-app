@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand"[routerLink]="['/list']">Todo-app</a>
+    <div class="form-inline">
+      <h5 style="margin-right: 15px;"> {{ name }} </h5>
+      <button class="btn btn-danger " (click)= "dec()" >Log out </button>
+    </div>
+  </nav>
+    <router-outlet></router-outlet>
+  
+

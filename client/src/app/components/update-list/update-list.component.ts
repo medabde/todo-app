@@ -20,5 +20,6 @@ export class UpdateListComponent implements OnInit {
  Update():void{
    this.listservice.updateList(this.list).subscribe(data => this.list = data);
    console.log('goood job');
+   this.router.navigate(['/list']);
  }
 }

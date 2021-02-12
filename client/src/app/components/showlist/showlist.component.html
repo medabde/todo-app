@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<br>
+<div class="centered-content">
+    <div class="modal-box">
+      <br>
+      <div class="form-row align-items-center">
+      <div class="col-5">
+      <input  class="form-control" type="text" placeholder="Task name Here" [(ngModel)]="Todo.todo" >
+    </div>
+      <p style="color: red;">{{error}}</p>
+      <div class="col-auto my-1">
+        <button type="button" class="btn btn-dark" routerLink="/list" style="margin-right: 10px;">Cancel</button>
+        <button type="button" class="btn btn-primary"  (click)="createTodo()">Create</button>
+      </div>
+ 
+    </div>
+  </div>
+  </div>
+  
+
+  <br> <br>
+  <div class="todos">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>name</th>
+      <th class="hidden"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let todo of Todos ; let i = index; " class="todo {{ (todo.isDone ? 'done' : '') }}">
+      <!-- <td>{{list._id}}</td> -->
+      <td class="content" (click)="toggle(todo) ">{{todo.todo}}</td>
+      <td> {{ todo.isDone ? '&#10003;' : '&#10005;' }}</td>
+      <td>
+        
+        <button class="btn btn-primary"style="margin-left: 20px;" [routerLink]="['/update', listId ,todo._id]" > Edit</button></td>
+       <td> <button class="btn btn-danger" style="margin-left: 20px;" (click)= "delete(todo._id,i)"> Delete</button>
+    </td>
+      </tr>
+</tbody>
+</table>
+<div class="todos"></div>
+

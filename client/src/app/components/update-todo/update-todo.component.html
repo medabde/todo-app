@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<br>
+<form>
+    <h2 style="margin-left: 16px;"> Update Task </h2>
+    <br>
+    <div class="col-6">
+      <label for="name">Task name</label>
+      <input type="text" name="title"  class="form-control" [(ngModel)]="todo.todo" id="title"  placeholder="Enter the new task name">
+    </div>
+    <br>
+    <button style="margin-left: 13px;" type="submit" class="btn btn-primary" (click)="updateTodo()">Submit</button>
+  </form>
+  
