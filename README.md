@@ -10,10 +10,10 @@ Website to mange your todos (Full MEAN Application).
 
 ## How to run :
 
-Update CONNECTION_URL variable in server/.env file.  
-Run npm install in server and client folders.  
-Run npm start on both folders.  
-Enjoy :D  
+- Update CONNECTION_URL variable in server/.env file.  
+- Run npm install on server and client folders.  
+- Run npm start on both folders.  
+- Enjoy :D  
 
 ## Technologies Used :
 
