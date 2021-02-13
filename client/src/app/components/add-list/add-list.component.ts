@@ -28,7 +28,7 @@ export class AddListComponent implements OnInit {
     
     if(this.list.title==''|| this.list.name=='') this.error = "All fields are required";
     else{
-    this.listservice.createList(this.list).subscribe(data =>{this.error=''; console.log(data)});
+    this.listservice.createList(this.list).subscribe(data =>{this.error='';});
     this.router.navigate(['list']);
     }
   }

@@ -28,7 +28,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let todo of Todos ; let i = index; " class="todo {{ (todo.isDone ? 'done' : '') }}">
+    <tr *ngFor="let todo of Todos ; let i = index; " style="cursor:pointer" class="todo {{ (todo.isDone ? 'done' : '') }}">
       <!-- <td>{{list._id}}</td> -->
       <td class="content" (click)="toggle(todo) ">{{todo.todo}}</td>
       <td> {{ todo.isDone ? '&#10003;' : '&#10005;' }}</td>

@@ -28,7 +28,6 @@ export class UpdateTodoComponent implements OnInit {
     )
   }
   updateTodo():void {
-    console.log(this.listId, this.todo)
       this.todosService.updateTodo(this.listId,this.todo).subscribe(() => {
         this.router.navigate(['/task', this.listId]);
       })

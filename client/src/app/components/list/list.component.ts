@@ -18,8 +18,6 @@ export class ListComponent implements OnInit {
   
   constructor(private usersService:UsersService,private listService:ListsService,private router:Router) {
    // this.listService= JSON.parse(localStorage.getItem('listService') || '{}');
-    
-    console.log("Hello");
     this.lists = [];
     this.listService.getLists().subscribe(data => {this.lists = data ; console.log(data)});
    }

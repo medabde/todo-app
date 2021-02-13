@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let list of lists ; let i = index" [routerLink]="['/task', list._id]" routerLinkActive="is-active">
+      <tr *ngFor="let list of lists ; let i = index" style="cursor:pointer" [routerLink]="['/task', list._id]" routerLinkActive="is-active">
         <td>{{list.title}}</td>
         <td>{{list.name}}</td>
         <td>
