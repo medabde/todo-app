@@ -1,6 +1,6 @@
 # Todo app
 
-Website to mange your todos (Full MEAN Application).  
+Website to manage your todos (Full MEAN Application).  
 
 ## Features :
 
